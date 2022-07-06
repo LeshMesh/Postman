@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "4b8c9b6a-2da6-4802-afd0-7b3412b374aa",
+		"name": "todoist.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16047588"
+	},
+	"item": [
+		{
+			"name": "Get a user's projects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/projects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a new project",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "$(uuidgen)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Shopping List\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/projects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding a new task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "$(uuidgen)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"content\": \"Buy Milk\", \"project_id\": 2294418117}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/tasks",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating a task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "$(uuidgen)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"due_string\": \"tomorrow\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/tasks/5984930629",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"tasks",
+						"5984930629"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Completing a task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "$(uuidgen)",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/tasks/5984930629/close",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"tasks",
+						"5984930629",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleting a project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Request-Id",
+						"value": "$(uuidgen)",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.todoist.com/rest/v1/projects/2294417986",
+					"protocol": "https",
+					"host": [
+						"api",
+						"todoist",
+						"com"
+					],
+					"path": [
+						"rest",
+						"v1",
+						"projects",
+						"2294417986"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "f6195222fbd6bc99cb759160cbdda6d13ea33915",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
